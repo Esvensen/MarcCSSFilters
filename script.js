@@ -3,7 +3,7 @@ const saturationOutput = document.querySelector('span.saturation-output');
 const blurToggle = document.querySelector(`input[name="blur"]`);
 const blurOutput = document.querySelector('span.blur-output');
 
-let currentBlur = (`blur(` + 10 + "px" + `)`);
+let currentBlur = (`blur(` + 0 + "px" + `)`);
 let currentSaturation = (`saturate(` + 1  + `)`);
 
 let styleTweak;
