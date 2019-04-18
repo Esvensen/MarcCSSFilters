@@ -1,61 +1,29 @@
+const saturationToggle = document.querySelector(`input[name="saturate"]`);
+const saturationOutput = document.querySelector('span.saturation-output');
 const blurToggle = document.querySelector(`input[name="blur"]`);
-const brightnessToggle = document.querySelector(`input[name="brightness"]`);
-const contrastToggle = document.querySelector(`input[name="contrast"]`);
-const dropShadowToggle = document.querySelector(`input[name="dropShadow"]`);
-const grayscaleToggle = document.querySelector(`input[name="grayscale"]`);
-const hueRotateToggle = document.querySelector(`input[name="hueRotate"]`);
+const blurOutput = document.querySelector('span.blur-output');
 
+let currentBlur = (`blur(` + 10 + "px" + `)`);
+let currentSaturation = (`saturate(` + 1  + `)`);
 
-
-
-
+let styleTweak;
 
 const videoTag = document.querySelector('div.video');
 
-blurToggle.addEventListener("change", function () {
-  if(this.checked) {
-    videoTag.classList.add("blur");
-  } else {
-    videoTag.classList.remove("blur");
-  }
+console.log(currentBlur + ' ' + currentSaturation + ';');
+videoTag.style.filter = currentBlur + ' ' + currentSaturation;
+
+saturationToggle.addEventListener("input", function () {
+  currentSaturation = (`saturate(` + this.value + `)`);
+  saturationOutput.innerHTML = this.value;
+  styleTweak = currentBlur + ' ' + currentSaturation;
+  videoTag.style.filter = styleTweak;
 });
 
-brightnessToggle.addEventListener("change", function () {
-  if(this.checked) {
-    videoTag.classList.add("brightness");
-  } else {
-    videoTag.classList.remove("brightness");
-  }
-});
-
-contrastToggle.addEventListener("change", function () {
-  if(this.checked) {
-    videoTag.classList.add("contrast");
-  } else {
-    videoTag.classList.remove("contrast");
-  }
-});
-
-dropShadowToggle.addEventListener("change", function () {
-  if(this.checked) {
-    videoTag.classList.add("drop-shadow");
-  } else {
-    videoTag.classList.remove("drop-shadow");
-  }
-});
-
-grayscaleToggle.addEventListener("change", function () {
-  if(this.checked) {
-    videoTag.classList.add("grayscale");
-  } else {
-    videoTag.classList.remove("grayscale");
-  }
-});
-
-hueRotateToggle.addEventListener("change", function () {
-  if(this.checked) {
-    videoTag.classList.add("hue-rotate");
-  } else {
-    videoTag.classList.remove("hue-rotate");
-  }
+blurToggle.addEventListener("input", function () {
+  currentBlur = (`blur(` + this.value + "px" + `)`);
+  blurOutput.innerHTML = this.value;
+  styleTweak = currentBlur + ' ' + currentSaturation;
+  videoTag.style.filter = styleTweak;
+  console.log(styleTweak)
 });

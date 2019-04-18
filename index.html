@@ -11,35 +11,15 @@
 
     <div class="buttons">
 
-        <label class="switch">
-          <input type="checkbox" name="blur">
-          <span class="slider round"></span>
-        </label>
+      <div class="option">
+        <label>Saturation <span class="saturation-output">0</span></label>
+        <input type="range" name="saturate" min=1 max=500 value=1>
+      </div>
 
-      <label class="switch">
-        <input type="checkbox" name="brightness">
-        <span class="slider round"></span>
-      </label>
-
-      <label class="switch">
-        <input type="checkbox" name="contrast">
-        <span class="slider round"></span>
-      </label>
-
-      <label class="switch">
-        <input type="checkbox" name="dropShadow">
-        <span class="slider round"></span>
-      </label>
-
-      <label class="switch">
-        <input type="checkbox" name="grayscale">
-        <span class="slider round"></span>
-      </label>
-
-      <label class="switch">
-        <input type="checkbox" name="hueRotate">
-        <span class="slider round"></span>
-      </label>
+      <div class="option">
+        <label>Blur <span class="blur-output">0</span></label>
+        <input type="range" name="blur" min=1 max=500 value=0>
+      </div>
     </div>
 
   </section>
