@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
+
 body {
   height: 100vh;
   overflow-y: hidden;
+  font-family: 'Roboto', sans-serif;
+  background-color: #2a2a2a;
+  color: white;
 }
 
 section {
@@ -12,17 +17,45 @@ section {
   }
 
 div.video {
-  width: 800px;
-  height: 540px;
+  max-width: 800px;
+  max-height: 540px;
   z-index: 0;
+  border: solid white 10px;
+  border-bottom: solid white 40px;
+  border-radius: 10px;
 }
+
+div.circle {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+div.brand {
+  display: flex;
+  flex-direction: row;
+  color: #2a2a2a;
+  justify-content: space-between;
+}
+
+div.logo h2{
+  margin: 0;
+  font-style: italic;
+}
+
 
 
 div.buttons {
   flex-direction: row;
+  width: 800px;
 }
 
 div.option {
   margin: 20px 0 0 0;
+}
 
+div.option label {
+  font-style: italic;
 }
